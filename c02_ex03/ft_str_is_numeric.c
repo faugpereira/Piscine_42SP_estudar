@@ -1,0 +1,46 @@
+
+#include <stdio.h>
+
+int		ft_str_is_numeric(char *str)
+{
+	int c;
+	int d;
+
+	c = 0;
+	while (str[c] != '\0')
+	{
+		d = str[c];
+		if (d < 48 || d > 57)
+		{
+			return (0);
+		}
+		c++;
+	}
+	return (1);
+}
+
+
+
+int ft_str_is_numeric(char *str);
+
+int        main(void)
+{
+    char *str;
+    int a;
+
+    str = "0123";
+    a = ft_str_is_numeric(str);
+    printf("String '0123': %d\n", a);
+    str = "";
+    a = ft_str_is_numeric(str);
+    printf("String vazia: %d\n", a);
+    str = "Roberto";
+    a = ft_str_is_numeric(str);
+    printf("String 'Roberto': %d\n", a);
+    str = "Roberto 0123";
+    a = ft_str_is_numeric(str);
+    printf("String 'Roberto 0123': %d\n", a);
+    str = "#@$#$&0123";
+    a = ft_str_is_numeric(str);
+    printf("String '#@$#$*&$&0123': %d\n", a);
+}
